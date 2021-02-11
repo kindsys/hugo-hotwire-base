@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {{ .Title }}
+    </title>
+    <meta name="description" content="{{ .Description }}">
+    {{/* styles */}}
+    {{ $options := dict "inlineImports" true }}
+    {{ $styles := resources.Get "css/styles.scss" }}
+    {{ $cssOptions := dict "enableSourceMap" true }}
+    {{ $styles = $styles | toCSS $cssOptions }}
+    {{ if  hugo.IsProduction  }}
+      {{ $styles = $styles | resources.PostCSS $options | minify | fingerprint | resources.PostProcess }}
+    {{ end }}
+    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+  </head>
+  <body class="my-10">
+    <div class="container px-4 lg:mx-auto">
+      <button class="btn" role="button"><span>test</span></button>
+      {{ block "main" . }}{{ end }}
+    </div>
+  </body>
+</html>
