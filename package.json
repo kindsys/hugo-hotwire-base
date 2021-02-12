@@ -8,18 +8,20 @@
   "scripts": {
     "lint": "eslint src",
     "start": "run-p start:*",
-    "start:hugo": "hugo server -D",
+    "start:hugo": "hugo server --buildDrafts",
     "start:webpack": "webpack --config webpack.dev.js --watch",
     "preview": "run-p preview:**",
-    "preview:hugo": "yarn start:hugo server -- -D -F",
+    "preview:hugo": "yarn start:hugo --buildFuture",
     "preview:webpack": "yarn start:webpack",
     "build": "run-s build:webpack build:hugo",
     "build:clean": "run-s build:webpack build:hugo:clean",
     "build:hugo": "hugo --minify",
     "build:hugo:clean": "hugo --minify --cleanDestinationDir",
-    "build:webpack": "webpack --config webpack.prod.js",
+    "build:hugo:preview": "yarn build:hugo --buildDrafts --buildFuture",
     "build:preview": "yarn build:webpack && yarn build:hugo:preview",
-    "build:hugo:preview": "yarn build:hugo -- -D -F"
+    "build:netlify:branch": "yarn build:webpack && yarn build:hugo:clean --baseURL=$DEPLOY_PRIME_URL",
+    "build:netlify:preview": "yarn build:webpack && yarn build:hugo:preview --baseURL=$DEPLOY_PRIME_URL",
+    "build:webpack": "webpack --config webpack.prod.js"
   },
   "dependencies": {
     "@hotwired/turbo": "^7.0.0-beta.4",

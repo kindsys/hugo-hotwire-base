@@ -1,21 +1,21 @@
 [build]
 publish = "public"
-command = "hugo --gc --minify -d public;"
+command = "yarn build"
 
 [context.production.environment]
-HUGO_VERSION = "0.80"
+HUGO_VERSION = "0.80.0"
 
 [context.branch-deploy]
-command = "hugo --minify --gc -d public -b $DEPLOY_PRIME_URL"
+command = "yarn build:netlify:branch"
 
 [context.branch-deploy.environment]
-HUGO_VERSION = "0.80"
+HUGO_VERSION = "0.80.0"
 
 [context.deploy-preview]
-command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+command = "yarn build:netlify:preview"
 
 [context.deploy-preview.environment]
-HUGO_VERSION = "0.80"
+HUGO_VERSION = "0.80.0"
 
 [[headers]]
 for = "/*.jpg"
