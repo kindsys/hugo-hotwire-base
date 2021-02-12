@@ -6,7 +6,7 @@ theme = "rename-this-theme"
 [module]
   [module.hugoVersion]
     extended = false
-    min = "0.75.0"
+    min = "0.80.0"
 
 [build]
 # Used by PurgeCSS

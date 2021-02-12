@@ -1,3 +1,3 @@
-module github.com/bep/hugo-starter-tailwind-basic/v2
+module github.com/kindsys/hugo-hotwire-base
 
 go 1.15

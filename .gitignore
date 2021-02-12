@@ -1,7 +1,25 @@
-node_modules/
+# Hugo default output folders
 public/
 resources/
 hugo_stats.json
-.vscode
+
+# Yarn/NPM
+node_modules/
+yarn-error.log
+
+# Webpack output
 data/webpack.json
 static/js
+
+# IDEs
+.idea
+.vscode
+
+# Ruby
+.byebug_history
+
+# OSX
+.DS_Store
+
+# asdf
+.tool-verions
