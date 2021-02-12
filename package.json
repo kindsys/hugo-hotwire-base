@@ -19,6 +19,7 @@
     "build:hugo:clean": "hugo --minify --cleanDestinationDir",
     "build:hugo:preview": "yarn build:hugo --buildDrafts --buildFuture",
     "build:preview": "yarn build:webpack && yarn build:hugo:preview",
+    "build:forestry:preview": "yarn build:webpack && yarn preview:hugo",
     "build:netlify:branch": "yarn build:webpack && yarn build:hugo:clean --baseURL=$DEPLOY_PRIME_URL",
     "build:netlify:preview": "yarn build:webpack && yarn build:hugo:preview --baseURL=$DEPLOY_PRIME_URL",
     "build:webpack": "webpack --config webpack.prod.js"
