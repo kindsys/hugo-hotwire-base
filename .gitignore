@@ -2,3 +2,6 @@ node_modules/
 public/
 resources/
 hugo_stats.json
+.vscode
+data/webpack.json
+static/js

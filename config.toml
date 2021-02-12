@@ -1,6 +1,7 @@
 baseURL = "https://example.org"
-
-disableKinds = ["page", "section", "taxonomy", "term"]
+languageCode = "en-us"
+disableKinds = ["taxonomy", "term"]
+theme = "rename-this-theme"
 
 [module]
   [module.hugoVersion]

@@ -1,0 +1,25 @@
+<head>
+  <meta charset="utf-8">
+  <title>
+    {{ .Title }}
+  </title>
+  <meta name="description" content="{{ .Description }}">
+
+  {{/* styles */}}
+  {{ $options := dict "inlineImports" true }}
+  {{ $styles := resources.Get "css/styles.scss" }}
+  {{ $cssOptions := dict "enableSourceMap" true }}
+  {{ $styles = $styles | toCSS $cssOptions }}
+  {{ if hugo.IsProduction }}
+    {{ $styles = $styles | resources.PostCSS $options | minify | fingerprint | resources.PostProcess }}
+  {{ end }}
+  <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+  {{/* styles */}}
+
+  {{/* js */}}
+  {{ $script := .Site.Data.webpack.main }}
+  {{ with $script.js }}
+    <script src="/js{{ relURL . }}"></script>
+  {{ end }}
+  {{/* js */}}
+</head>

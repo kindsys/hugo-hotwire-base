@@ -1,0 +1,39 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+      "sourceType": "module"
+  },
+  "rules": {
+    "class-methods-use-this": "off",
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "no-use-before-define": "off",
+    "no-extend-native": "off",
+    "max-len": [
+      "warn",
+      {
+        "code": 120,
+        "tabWidth": 2,
+        "comments": 124,
+        "ignoreComments": false,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    "max-lines-per-function": [
+      "warn",
+      {
+        "max": 50,
+        "skipComments": true,
+        "skipBlankLines": true
+      }
+    ],
+    "no-param-reassign": [2, { "props": false }]
+  }
+}
