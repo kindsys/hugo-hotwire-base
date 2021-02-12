@@ -4,6 +4,6 @@ export default class TestController extends Controller {
   static targets = ['output'];
 
   connect() {
-    this.outputTarget.innerHTML = 'yay!';
+    this.outputTarget.innerHTML = 'Yay Stimulus!';
   }
 }

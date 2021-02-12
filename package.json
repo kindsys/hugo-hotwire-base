@@ -2,7 +2,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bep/hugo-starter-tailwind-basic.git"
+    "url": "https://github.com/kindsys/hugo-hotwire-base"
   },
   "browserslist": "> 1%",
   "scripts": {
@@ -14,7 +14,9 @@
     "preview:hugo": "yarn start:hugo server -- -D -F",
     "preview:webpack": "yarn start:webpack",
     "build": "run-s build:webpack build:hugo",
+    "build:clean": "run-s build:webpack build:hugo:clean",
     "build:hugo": "hugo --minify",
+    "build:hugo:clean": "hugo --minify --cleanDestinationDir",
     "build:webpack": "webpack --config webpack.prod.js",
     "build:preview": "yarn build:webpack && yarn build:hugo:preview",
     "build:hugo:preview": "yarn build:hugo -- -D -F"
