@@ -1,15 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import "components/all.scss";
-
-html {
-  font-size: 14px;
-}
-
-@screen md {
-  html {
-    font-size: 16px;
-  }
-}
+@import 'node_modules/tailwindcss/dist/base';
+@import 'node_modules/tailwindcss/dist/components';
+@import 'node_modules/tailwindcss/dist/utilities';
+@import 'components/all.scss';
