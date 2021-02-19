@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import * as Turbo from '@hotwired/turbo';
 import { Application } from 'stimulus';
 import { definitionsFromContext } from 'stimulus/webpack-helpers';

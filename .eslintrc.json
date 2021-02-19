@@ -1,4 +1,5 @@
 {
+  "extends": "airbnb-base",
   "env": {
     "browser": true,
     "es6": true
@@ -34,6 +35,7 @@
         "skipBlankLines": true
       }
     ],
-    "no-param-reassign": [2, { "props": false }]
+    "no-param-reassign": [2, { "props": false }],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
   }
 }
