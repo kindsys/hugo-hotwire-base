@@ -8,9 +8,8 @@
   {{/* styles */}}
   {{ $styles := resources.Get "css/styles.scss" }}
   {{ $cssOptions := dict "enableSourceMap" true }}
-  {{ $styles = $styles | toCSS $cssOptions }}
+  {{ $styles = $styles | toCSS $cssOptions | resources.PostCSS }}
   {{ if hugo.IsProduction }}
-    {{ $styles = $styles | resources.PostCSS }}
     {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
   {{ end }}
   <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />

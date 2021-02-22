@@ -1,18 +1,20 @@
+const typography = require('@tailwindcss/typography');
+
 module.exports = {
   important: true, // See https://tailwindcss.com/docs/configuration#important
   purge: {
     enabled: process.env.HUGO_ENVIRONMENT === 'production',
-    content: ['./hugo_stats.json', './layouts/**/*.html'],
+    content: ['./hugo_stats.json', './layouts/**/*.html', './src/js/**/*.js'],
     extractors: [
       {
-        extractor: content => {
-          let els = JSON.parse(content).htmlElements;
+        extractor: (content) => {
+          const els = JSON.parse(content).htmlElements;
           return els.tags.concat(els.classes, els.ids);
         },
-        extensions: ['json']
-      }
+        extensions: ['json'],
+      },
     ],
-    mode: 'all'
+    mode: 'all',
   },
-  plugins: []
+  plugins: [typography],
 };
