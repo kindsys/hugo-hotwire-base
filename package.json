@@ -25,7 +25,7 @@
     "build:webpack": "webpack --config webpack.prod.js"
   },
   "dependencies": {
-    "@hotwired/turbo": "^7.0.0-beta.4",
+    "@hotwired/turbo": "^7.0.0-beta.5",
     "stimulus": "^2.0.0"
   },
   "devDependencies": {
@@ -54,6 +54,6 @@
     "webpack-cli": "^3.3.12",
     "webpack-merge": "^4.1.4"
   },
-  "name": "hugo-starter-tailwind-basic",
+  "name": "hugo-hotwire-base",
   "version": "0.1.0"
 }

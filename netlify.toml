@@ -9,13 +9,13 @@ HUGO_VERSION = "0.80.0"
 command = "yarn build:netlify:branch"
 
 [context.branch-deploy.environment]
-HUGO_VERSION = "0.80.0"
+HUGO_VERSION = "0.82.1"
 
 [context.deploy-preview]
 command = "yarn build:netlify:preview"
 
 [context.deploy-preview.environment]
-HUGO_VERSION = "0.80.0"
+HUGO_VERSION = "0.82.1"
 
 [[headers]]
 for = "/*.jpg"
